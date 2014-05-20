@@ -1,0 +1,35 @@
+<html>
+<style>
+  body {
+    text-align: center;
+  }
+</style>
+<head>
+  <script language="javascript">
+    function hide() {
+        document.getElementById("1").src = "back.jpeg"
+        document.getElementById("2").src = "back.jpeg"
+        document.getElementById("3").src = "back.jpeg"
+      }
+
+    function show() {
+      document.getElementById("1").src = "spade.jpg"
+      document.getElementById("2").src = "heart.png"
+      document.getElementById("3").src = "club.jpeg"
+    }
+
+</script>
+</head>
+<body>
+
+<h1>Franks Small Memory Game</h1>
+
+ <img src="spade.jpg" width=100 id="1">&nbsp;&nbsp;
+ <img src="heart.png" width=100 id="2">&nbsp;&nbsp;
+ <img src="club.jpeg" width=100 id="3">
+
+<br/><br/>
+<button onclick="hide()">Hide</button>
+<button onclick="show()">Show</button>
+</body>
+</html>

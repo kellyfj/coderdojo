@@ -1,0 +1,53 @@
+<html>
+<style>
+  body {
+    text-align: center;
+  }
+</style>
+<head>
+  <script language="javascript">
+  var myImages = [
+    "spade.jpg",
+    "heart.png",
+    "club.jpeg"
+];
+    function hide() {
+        document.getElementById("1").src = "back.jpeg"
+        document.getElementById("2").src = "back.jpeg"
+        document.getElementById("3").src = "back.jpeg"
+        shuffle();
+      }
+
+    function show() {
+      document.getElementById("1").src = myImages[0];
+      document.getElementById("2").src = myImages[1];
+      document.getElementById("3").src = myImages[2];
+    }
+
+    function shuffle() {
+      for(var i=0; i< 100; i++) {
+        swap(myImages,0,1);
+        swap(myImages,1,2);
+      }
+    }
+
+    function swap(array, original, newPosition) {
+      var temp = array[original];
+      array[original] = array[newPosition];
+      array[newPosition] = temp;
+    }
+</script>
+</head>
+<body>
+
+<h1>Franks Small Memory Game</h1>
+
+ <img src="spade.jpg" width=100 id="1">&nbsp;&nbsp;
+ <img src="heart.png" width=100 id="2">&nbsp;&nbsp;
+ <img src="club.jpeg" width=100 id="3">
+
+<br/><br/>
+<button onclick="hide()">Hide and Shuffle</button>&nbsp;&nbsp;
+<button onclick="show()">Show</button>&nbsp;&nbsp;
+</body>
+</html>
