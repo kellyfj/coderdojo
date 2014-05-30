@@ -6,19 +6,22 @@
 </style>
 <head>
   <script language="javascript">
-  var cardsTurned=0;
+ //0. Level set - questions & reminder - what hide vs show does
+ //1. Create Array and rewire
+ //2. Shuffle & Swap
+ //3. Turn 
+ //4. Check result
+
   var myImages = [
     "spade.jpg",
     "heart.png",
-    "club.jpeg"
-];
+    "club.jpeg" ];
+
     function hide() {
         document.getElementById("1").src = "back.jpeg"
         document.getElementById("2").src = "back.jpeg"
         document.getElementById("3").src = "back.jpeg"
         shuffle();
-        cardsTurned=0;
-        enableShowAllButton();
       }
 
     function show() {
@@ -29,34 +32,25 @@
 
     function turn(i) {
       document.getElementById(i).src = myImages[i-1];
-      cardsTurned++;
-      if(cardsTurned==1 && document.getElementById(i).src.indexOf("heart") > -1) {
-        alert("You win!");
+      if(document.getElementById(i).src.indexOf("heart") > -1) {
+        alert("You found it!");
       } else {
-         alert("You lose!");
+         alert("Nope not it!");
        }
   }
     function shuffle() {
-      for(var i=0; i< 100; i++) {
-        swap(myImages,0,1);
-        swap(myImages,1,2);
-      }
+        swap(0,1);
+        swap(1,2);
     }
 
-    function swap(array, original, newPosition) {
-      var temp = array[original];
-      array[original] = array[newPosition];
-      array[newPosition] = temp;
-    }
-    function disableShowAllButton() {
-      document.getElementById("showAllButton").disabled = true;
-    }
-    function enableShowAllButton() {
-      document.getElementById("showAllButton").disabled = false;
+    function swap(original, newPosition) {
+      var temp = myImages[original];
+      myImages[original] = myImages[newPosition];
+      myImages[newPosition] = temp;
     }
 </script>
 </head>
-<body onload="disableShowAllButton()">
+<body>
 
 <h1>Franks Small Memory Game</h1>
 <h2>The Goal: Find the "Heart"</h2>
