@@ -1,4 +1,4 @@
-var city3 = function(cityblocks, buildings, cityname) {
+var city = function(cityblocks, buildings, cityname) {
     var i , j;
     if ( typeof cityblocks == 'undefined' ) {
         cityblocks = 3;
@@ -20,7 +20,7 @@ var city3 = function(cityblocks, buildings, cityname) {
 	    for ( i = 0; i < buildings; i++ ) {
 		this.road2(4,city_block_width);
 		this.right(6); //road width = 4 plus 2 for border
-		this.up().sky3(floors,building_size).down();
+		this.up().sky4(floors,building_size).down();
 		this.right(building_size);
 	    }
             this.road2(4,city_block_width);
@@ -29,10 +29,10 @@ var city3 = function(cityblocks, buildings, cityname) {
             this.fwd(city_block_width);
      }
     //Move drone above city
-    this.up(floors*4 + 20); 
+    this.up(floors*4 + 20);
     this.blocktype(cityname, blocks.glowstone);
 
     return this.move('start'); // return to where we started
 };
 var Drone = require('../drone/drone').Drone;
-Drone.extend('city3',city3);
+Drone.extend('city',city);

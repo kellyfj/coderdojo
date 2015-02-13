@@ -1,4 +1,4 @@
-var sky3 = function() {
+var sky2 = function() {
 
     var width = 5;
     var length = 7;
@@ -11,9 +11,6 @@ var sky3 = function() {
         this.up(3);
     }
 
-    //What will this do?
-    this.box(blocks.stone,width,1,length);
-
 };
 var Drone = require('../drone/drone').Drone;
-Drone.extend('sky3',sky3);
+Drone.extend('sky2',sky2);
