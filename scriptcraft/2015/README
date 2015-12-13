@@ -1,0 +1,8 @@
+Place all of these files in a folder UNDER you scriptcraft/plugins folder. 
+For example in a folder with this path
+
+scriptcraft/plugins/coderdojo
+
+The reason for this is that this line of code requires that path
+var Drone = require('../drone/drone').Drone;
+
